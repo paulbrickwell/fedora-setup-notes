@@ -64,3 +64,14 @@ Rebuild: `sudo dracut --force`
 
 2. Grant Element access to the system keyring: `sudo flatpak override --talk-name=org.kde.kwalletd6 im.riot.Riot`
 
+## Customize SDDM on Kinoite
+
+1. Copy the SDDM directory to a mutable location `sudo cp -r /usr/share/sddm /var`
+
+2. Setup a bind mount in `/etc/fstab`:
+
+`sudo nano /etc/fstab`
+
+Add this line to the file: `/var/sddm /usr/share/sddm none rbind 0 0`
+
+3. Reboot and configure as normal in System Settings. 
